@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="留白音乐，一个极简的在线音乐播放器。">
+  <title>留白音乐</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="留白音乐首页">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>留白</span>
+    </a>
+    <nav aria-label="主导航">
+      <a class="active" href="#discover">发现</a>
+      <a href="#collection">收藏</a>
+      <a href="#about">关于</a>
+    </nav>
+    <button class="search-toggle icon-button" aria-label="打开搜索" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="discover">
+      <p class="eyebrow">TODAY'S SELECTION</p>
+      <h1>让声音，<br>留在此刻。</h1>
+      <p class="intro">一些适合独处、阅读和缓慢生活的声音。</p>
+    </section>
+
+    <section class="music-section" aria-labelledby="section-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-number">01</p>
+          <h2 id="section-title">今日精选</h2>
+        </div>
+        <span class="track-count">1 首曲目</span>
+      </div>
+
+      <div class="search-panel" hidden>
+        <label for="search">搜索曲目或音乐人</label>
+        <div class="search-field">
+          <input id="search" type="search" placeholder="输入关键词…" autocomplete="off">
+          <button class="clear-search" type="button" aria-label="清空搜索">×</button>
+        </div>
+      </div>
+
+      <div class="track-list" role="list">
+        <article class="track active" role="listitem" data-index="0">
+          <button class="track-main" type="button" aria-label="播放 Pressure">
+            <span class="track-index"><span>01</span><i class="playing-bars"><b></b><b></b><b></b></i></span>
+            <span class="cover cover-one" aria-hidden="true"><i></i></span>
+            <span class="track-info"><strong>Pressure</strong><small>Billy Joel</small></span>
+          </button>
+          <span class="track-meta">摇滚 / 流行</span>
+          <span class="duration">04:40</span>
+          <button class="heart icon-button" type="button" aria-label="收藏 Pressure">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg>
+          </button>
+        </article>
+
+      </div>
+      <p class="empty-state" hidden>没有找到相关曲目。</p>
+    </section>
+  </main>
+
+  <footer id="about">
+    <span>© 2026 留白音乐</span>
+    <p>少一点噪音，多一点音乐。</p>
+  </footer>
+
+  <aside class="player" aria-label="音乐播放器">
+    <div class="now-playing">
+      <span class="mini-cover cover-one" aria-hidden="true"><i></i></span>
+      <span><strong>Pressure</strong><small>Billy Joel</small></span>
+    </div>
+    <div class="player-center">
+      <div class="controls">
+        <button class="previous icon-button" type="button" aria-label="上一首">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 6l-9 6 9 6V6Z"/></svg>
+        </button>
+        <button class="play-button" type="button" aria-label="播放">
+          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 9 6-9 6V6Z"/></svg>
+          <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6v12M16 6v12"/></svg>
+        </button>
+        <button class="next icon-button" type="button" aria-label="下一首">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 6l9 6-9 6V6Z"/></svg>
+        </button>
+      </div>
+      <div class="progress-wrap">
+        <time class="current-time">0:00</time>
+        <input class="progress" type="range" min="0" max="100" value="0" aria-label="播放进度">
+        <time class="total-time">4:40</time>
+      </div>
+    </div>
+    <div class="volume-wrap">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Zm4.5 4a4 4 0 0 1 0 6m2.5-9a8 8 0 0 1 0 12"/></svg>
+      <input class="volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="音量">
+    </div>
+  </aside>
+
+  <audio id="audio" preload="metadata"></audio>
+  <script src="script.js?v=4"></script>
+</body>
+</html>
