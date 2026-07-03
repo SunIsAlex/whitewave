@@ -5,6 +5,13 @@ const tracks = [
     duration: "4:40",
     cover: "cover-one",
     src: "audio/Billy_Joel_-_Pressure_-_The_Boys_2_OST_(mp3.pm).mp3"
+  },
+  {
+    title: "Stay Alive",
+    artist: "Emilia (CV: Rie Takahashi)",
+    duration: "3:47",
+    cover: "cover-two",
+    src: "audio/Re_Zero_-_Stay_Alive_2_ending_Full_(mp3.pm).mp3"
   }
 ];
 
